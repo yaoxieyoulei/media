@@ -153,6 +153,8 @@ public final class FfmpegLibrary {
         return "h264";
       case MimeTypes.VIDEO_H265:
         return "hevc";
+      case MimeTypes.AUDIO_AV3A:
+        return "libarcdav3a";
       default:
         return null;
     }

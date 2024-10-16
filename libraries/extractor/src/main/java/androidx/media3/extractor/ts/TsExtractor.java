@@ -22,6 +22,7 @@ import static java.lang.annotation.ElementType.TYPE_USE;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
+
 import androidx.annotation.IntDef;
 import androidx.annotation.Nullable;
 import androidx.media3.common.C;
@@ -141,6 +142,7 @@ public final class TsExtractor implements Extractor {
   public static final int TS_STREAM_TYPE_DVBSUBS = 0x59;
   public static final int TS_STREAM_TYPE_DTS_HD = 0x88; // As per ATSC Code Point Registry
   public static final int TS_STREAM_TYPE_DTS_UHD = 0x8B;
+  public static final int TS_STREAM_TYPE_AV3A = 0xD5;
 
   // Stream types that aren't defined by the MPEG-2 TS specification.
   public static final int TS_STREAM_TYPE_DC2_H262 = 0x80;

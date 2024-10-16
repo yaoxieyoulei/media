@@ -30,7 +30,7 @@ import java.nio.ByteBuffer;
 import java.util.List;
 
 /** FFmpeg audio decoder. */
-/* package */ final class FfmpegAudioDecoder
+/* package */ public final class FfmpegAudioDecoder
     extends SimpleDecoder<DecoderInputBuffer, SimpleDecoderOutputBuffer, FfmpegDecoderException> {
 
   private static final int INITIAL_OUTPUT_BUFFER_SIZE_16BIT = 65535;
@@ -78,6 +78,8 @@ import java.util.List;
   public String getName() {
     return "ffmpeg" + FfmpegLibrary.getVersion() + "-" + codecName;
   }
+
+  public String getCodecName() { return codecName; }
 
   @Override
   protected DecoderInputBuffer createInputBuffer() {

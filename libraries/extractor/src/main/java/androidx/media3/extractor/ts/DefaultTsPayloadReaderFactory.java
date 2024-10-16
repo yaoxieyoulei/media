@@ -204,6 +204,8 @@ public final class DefaultTsPayloadReaderFactory implements TsPayloadReader.Fact
         return new SectionReader(new PassthroughSectionPayloadReader(MimeTypes.APPLICATION_AIT));
       case TsExtractor.TS_STREAM_TYPE_MHAS:
         return new PesReader(new MpeghReader());
+      case TsExtractor.TS_STREAM_TYPE_AV3A:
+        return new PesReader(new Av3aReader(esInfo.language, esInfo.getRoleFlags()));
       default:
         return null;
     }

@@ -74,6 +74,7 @@ import android.util.SparseLongArray;
 import android.view.Display;
 import android.view.SurfaceView;
 import android.view.WindowManager;
+
 import androidx.annotation.ChecksSdkIntAtLeast;
 import androidx.annotation.DoNotInline;
 import androidx.annotation.DrawableRes;
@@ -90,6 +91,7 @@ import androidx.media3.common.PlaybackException;
 import androidx.media3.common.Player;
 import androidx.media3.common.Player.Commands;
 import androidx.media3.common.audio.AudioProcessor;
+
 import com.google.common.base.Ascii;
 import com.google.common.base.Charsets;
 import com.google.common.io.ByteStreams;
@@ -2237,13 +2239,13 @@ public final class Util {
       case 8:
         return AudioFormat.CHANNEL_OUT_7POINT1_SURROUND;
       case 10:
-        if (Util.SDK_INT >= 32) {
+       if (Util.SDK_INT >= 32) {
           return AudioFormat.CHANNEL_OUT_5POINT1POINT4;
-        } else {
+       } else {
           // Before API 32, height channel masks are not available. For those 10-channel streams
           // supported on the audio output devices (e.g. DTS:X P2), we use 7.1-surround instead.
-          return AudioFormat.CHANNEL_OUT_7POINT1_SURROUND;
-        }
+         return AudioFormat.CHANNEL_OUT_5POINT1;
+       }
       case 12:
         return AudioFormat.CHANNEL_OUT_7POINT1POINT4;
       default:
